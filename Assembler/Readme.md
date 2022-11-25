@@ -3,29 +3,28 @@
 ## __main__:
 ### int main(int argc, char *argv[])
 * -4 = i в for 
-* -8 = length
-* -16 = FILE *input_stream
-* -24 = FILE *output_stream
-* -32 = t_start
-* -40 = t_end
-* -44 = answer
-* -48 = length
-* -308 = argc
-* -320 = argv
+* -16 = result
+* -32 = input_stream
+* -40 = output_stream
+* -48 = t_start
+* -56 = t_end
+* -64 = epsilon
+* -68 = answer
+* -84 = argc 
+* -96 = argv
 
 
 ## __lib__:
-### int task(const char *str);
-* -4 = sum
-* -8 = i в for 
-* -12 = length
-* -13 = ch
-* -24 = char *str
+### double func(double x)
+* -8 = x 
 
-### int task_random(int length);
-* -4 = j в for 
-* -272 = string
-* -276 = length
+### double task(double x1, double x2, double epsilon)
+* -8 = fb
+* -16 = mid
+* -24 = x1
+* -32 = x2
+* -40 = epsilon
 
-### int task_cmd();
-* -256 = string
+### double check_accuracy(double epsilon)
+* -8 = epsilon
+

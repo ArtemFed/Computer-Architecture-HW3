@@ -5,12 +5,12 @@
 #define max_size 0.001
 
 double func(double x) {
-    return pow(x, 4) - pow(x, 3) - 2.5;
+    return x * x * x * x - x * x * x - 2.5;
 }
 
 // Chord Method
-double task(double left, double right, double epsilon) {
-    double x1 = left, x2 = right, fb = func(right), mid = 0;
+double task(double x1, double x2, double epsilon) {
+    double fb = func(x2), mid = 0;
     while (fabs(func(x2)) > epsilon)
     {
         mid = x2 - (x2 - x1) * fb / (fb - func(x1));

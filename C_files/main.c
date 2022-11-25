@@ -27,7 +27,7 @@ int main(int argc, char *argv[]) {
         time_t t_end = clock();
 
         printf("\nTime: %d ms", (int) (difftime(t_end, t_start)) / 1000);
-        printf("\nResult: x =  %*.*lf\n", 1, strlen(argv[1]) - 2, task(a, b, epsilon));
+        printf("\nResult: x =  %*.*lf\n", 1, ((int) strlen(argv[1])) - 2 , task(a, b, epsilon));
         return 0;
     }
     // Get str from File + cmd args
