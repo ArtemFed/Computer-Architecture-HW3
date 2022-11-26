@@ -4,9 +4,9 @@
 
 ##    Бесполезные переприсваивания:
 *		- mov	rax, QWORD PTR [rax]
-			lea	rdx, -64[rbp]
-			lea	rsi, .LC1[rip]
-		-	mov	rdi, rax
+		  lea	rdx, -64[rbp]
+		  lea	rsi, .LC1[rip]
+		- mov	rdi, rax
 		+ mov rdi, QWORD PTR [rax]
 *		- mov	rax, QWORD PTR -64[rbp]
 		- movq	xmm0, rax
@@ -24,31 +24,31 @@
 		- mov	rdi, rax
 		+ mov rdi, QWORD PTR [rax]
 *		- mov	rax, QWORD PTR [rax]
-			lea	rsi, .LC7[rip]
-		-	mov	rdi, rax
+		  lea	rsi, .LC7[rip]
+		- mov	rdi, rax
 		+ mov rdi, QWORD PTR [rax]
 *		- mov	rax, QWORD PTR -32[rbp]
-			lea	rsi, .LC1[rip]
+		  lea	rsi, .LC1[rip]
 		- mov	rdi, rax
 		+ mov rdi, QWORD PTR -32[rbp]
 *		- mov	rax, QWORD PTR -32[rbp]
 		- mov	rdi, rax
 		+ mov rdi, QWORD PTR -32[rbp]
 *		- mov	rax, QWORD PTR [rax]
-			lea	rsi, .LC9[rip]
+		  lea	rsi, .LC9[rip]
 		- mov	rdi, rax
 		+ mov rdi, QWORD PTR [rax]
 *		- mov	rax, QWORD PTR -40[rbp]
-			mov	ecx, 8
-			mov	edx, 1
-			lea	rsi, .LC10[rip]
+		  mov	ecx, 8
+		  mov	edx, 1
+		  lea	rsi, .LC10[rip]
 		- mov	rdi, rax
 		+ mov rdi, QWORD PTR -40[rbp]
 		Так 2 раза
 *		- mov	rax, QWORD PTR .LC15[rip]
-			movapd	xmm1, xmm0
-			mov	r8d, 3
-			mov	ecx, 1
+		  movapd	xmm1, xmm0
+		  mov	r8d, 3
+		  mov	ecx, 1
 		- movq	xmm0, rax
 		+ movq	xmm0, QWORD PTR .LC15[rip]
 *		- mov	rax, QWORD PTR -64[rbp]
@@ -58,10 +58,10 @@
 		- mov	QWORD PTR -16[rbp], rax
 		+ mov	QWORD PTR -16[rbp], xmm0
 *		- mov	rax, QWORD PTR -64[rbp]
-			movsd	xmm0, QWORD PTR -16[rbp]
-			movapd	xmm1, xmm0
-			mov	r8d, 8
-			mov	ecx, 1
+		  movsd	xmm0, QWORD PTR -16[rbp]
+		  movapd	xmm1, xmm0
+		  mov	r8d, 8
+		  mov	ecx, 1
 		- movq	xmm0, rax
 		+ movq	xmm0, QWORD PTR -64[rbp]
 *		- mov	rax, QWORD PTR -24[rbp]
@@ -87,20 +87,18 @@
     3:
       .align 8
     4:
-       
-
+    
 
 # __lib_mod.s__
 ##    Бесполезные переприсваивания:
 
 ### double check_accuracy(double epsilon)
-* 		- mov	rax, QWORD PTR -8[rbp]
-			- movq	xmm0, rax
-			+ movq	xmm0, QWORD PTR -8[rbp]
-			Так 2 раза
+* 	- mov	rax, QWORD PTR -8[rbp]
+	- movq	xmm0, rax
+	+ movq	xmm0, QWORD PTR -8[rbp]
+	Так 2 раза
 
 ##    Просто удалено
-* 		cdq, cdqe и endbr64
 *     .section	.note.gnu.property,"a"
       .align 8
       .long	 1f - 0f
