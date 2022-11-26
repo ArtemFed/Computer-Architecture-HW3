@@ -35,7 +35,7 @@
 	.string	"%lf\n"
 	.align 8
 .LC21:
-	.string	"Also the result was added to \"random_out.txt\"."
+	.string	"Also the result was added to \"random_out.txt\".\n"
 	.text
 	.globl	main
 	.type	main, @function
@@ -116,27 +116,19 @@ main:
 	lea	rdi, .LC5[rip]
 	mov	eax, 0
 	call	printf@PLT
-# ./main.c:30:         printf("\nResult: x =  %*.*lf\n", 1, ((int) strlen(argv[1])) - 2 , task(a, b, epsilon));
-	movsd	xmm1, QWORD PTR -64[rbp]
-	movsd	xmm0, QWORD PTR .LC3[rip]
-	mov	rax, QWORD PTR .LC4[rip]
-	movapd	xmm2, xmm1
-	movapd	xmm1, xmm0
-	movq	xmm0, rax
-	call	task@PLT
-	movsd	QWORD PTR -104[rbp], xmm0 # %sfp
-	mov	rax, QWORD PTR -96[rbp]
-	add	rax, 8
-	mov	rax, QWORD PTR [rax]
-	mov	rdi, rax
-	call	strlen@PLT
-	sub	eax, 2
-	movsd	xmm0, QWORD PTR -104[rbp]
-	mov	edx, eax
-	mov	esi, 1
-	lea	rdi, .LC6[rip]
-	mov	eax, 1
-	call	printf@PLT
+# ./main.c:30:         printf("\nResult: x =  %*.*lf\n", 1, 8, task(a, b, epsilon));
+ 	movsd xmm1, QWORD PTR -64[rbp] # epsilon.3_10, epsilon
+ 	movsd xmm0, QWORD PTR .LC3[rip] # tmp130,
+ 	mov rax, QWORD PTR .LC4[rip] # tmp131,
+ 	movapd xmm2, xmm1 #, epsilon.3_10
+ 	movapd xmm1, xmm0 #, tmp130
+ 	movq xmm0, rax #, tmp131
+ 	call task@PLT #
+ 	mov edx, 8 #,
+ 	mov esi, 1 #,
+ 	lea rdi, .LC6[rip] #,
+	mov eax, 1 #,
+	call printf@PLT #
 # ./main.c:31:         return 0;
 	mov	eax, 0
 	jmp	.L11

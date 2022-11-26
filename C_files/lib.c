@@ -24,10 +24,10 @@ double task(double x1, double x2, double epsilon) {
 double check_accuracy(double epsilon) {
     fflush(stdin);
     if (epsilon < min_size) {
-        printf("Incorrect Epsilon: %lf. Expected value from %lf to %lf. It will be replaced by %*.*lf\n", epsilon, min_size, max_size, 1, 8, min_size);
+        printf("Incorrect Epsilon: %lf. Expected value from %*.*lf to %lf. It will be replaced by %*.*lf\n", epsilon, 1, 8, min_size, max_size, 1, 8, min_size);
         return min_size;
     } else if (epsilon > max_size) {
-        printf("Incorrect Epsilon: %lf. Expected value from %lf to %lf. It will be replaced by %*.*lf\n", epsilon, min_size, max_size, 1, 3, max_size);
+        printf("Incorrect Epsilon: %lf. Expected value from %*.*lf to %lf. It will be replaced by %*.*lf\n", epsilon, 1, 8, min_size, max_size, 1, 3, max_size);
         return max_size;
     }
     return epsilon;

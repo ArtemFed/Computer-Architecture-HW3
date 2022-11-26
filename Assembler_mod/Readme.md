@@ -33,22 +33,19 @@
 
 # __lib_mod.s__
 ##    Бесполезные переприсваивания:
-### double func(double x)
-*			-
-
-### double task(double x1, double x2, double epsilon)
-* 		- mov	eax, DWORD PTR -24[rbp]
-  		- movsx	rdx, eax
-  		+ movsx	rdx, DWORD PTR -24[rbp]
-  		И так 4 раза по функции
-
 
 ### double check_accuracy(double epsilon)
-* 		-    
+* 	- mov	rax, QWORD PTR stdin[rip]
+	  - mov	rdi, rax
+    + mov rdi, QWORD PTR stdin[rip]
+*   - mov	rax, QWORD PTR -8[rbp]
+    - movq	xmm0, rax
+    + movq	xmm0, QWORD PTR -8[rbp]
+    Так 2 раза
 
 ##    Регистры:
 ### double task(double x1, double x2, double epsilon)
-* 		
+* 	r12d => -4[rbp] = i в for
 
 ### double check_accuracy(double epsilon)
 * 		

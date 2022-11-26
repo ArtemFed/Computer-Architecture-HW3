@@ -104,8 +104,7 @@ check_accuracy:
 	sub	rsp, 16
 	movsd	QWORD PTR -8[rbp], xmm0	# epsilon, epsilon
 # ./lib.c:25:     fflush(stdin);
-	mov	rax, QWORD PTR stdin[rip]
-	mov	rdi, rax
+	mov rdi, QWORD PTR stdin[rip]
 	call	fflush@PLT
 # ./lib.c:26:     if (epsilon < min_size) {
 	movsd	xmm0, QWORD PTR .LC3[rip]
@@ -115,13 +114,12 @@ check_accuracy:
 	movsd	xmm2, QWORD PTR .LC3[rip]
 	movsd	xmm1, QWORD PTR .LC4[rip]
 	movsd	xmm0, QWORD PTR .LC3[rip]
-	mov	rax, QWORD PTR -8[rbp]
 	movapd	xmm3, xmm2
 	mov	edx, 8
 	mov	esi, 1
 	movapd	xmm2, xmm1
 	movapd	xmm1, xmm0
-	movq	xmm0, rax
+	movq	xmm0, QWORD PTR -8[rbp]
 	lea	rdi, .LC5[rip]
 	mov	eax, 4
 	call	printf@PLT
@@ -137,13 +135,12 @@ check_accuracy:
 	movsd	xmm2, QWORD PTR .LC4[rip]
 	movsd	xmm1, QWORD PTR .LC4[rip]
 	movsd	xmm0, QWORD PTR .LC3[rip]
-	mov	rax, QWORD PTR -8[rbp]
 	movapd	xmm3, xmm2
 	mov	edx, 3
 	mov	esi, 1
 	movapd	xmm2, xmm1
 	movapd	xmm1, xmm0
-	movq	xmm0, rax
+	movq	xmm0, QWORD PTR -8[rbp]
 	lea	rdi, .LC5[rip]
 	mov	eax, 4
 	call	printf@PLT
@@ -179,19 +176,4 @@ check_accuracy:
 	.long	1062232653
 	.ident	"GCC: (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0"
 	.section	.note.GNU-stack,"",@progbits
-	.section	.note.gnu.property,"a"
-	.align 8
-	.long	 1f - 0f
-	.long	 4f - 1f
-	.long	 5
-0:
-	.string	 "GNU"
-1:
-	.align 8
-	.long	 0xc0000002
-	.long	 3f - 2f
-2:
-	.long	 0x3
-3:
-	.align 8
-4:
+	
