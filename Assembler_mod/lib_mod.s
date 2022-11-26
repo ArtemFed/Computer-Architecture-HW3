@@ -93,7 +93,7 @@ task:
 	.section	.rodata
 	.align 8
 .LC5:
-	.string	"Incorrect Epsilon: %lf. Expected value from %lf to %lf. It will be replaced by %*.*lf\n"
+	.string	"Incorrect Epsilon: %lf. Expected value from %*.*lf to %lf. It will be replaced by %*.*lf\n"
 	.text
 	.globl	check_accuracy
 	.type	check_accuracy, @function
