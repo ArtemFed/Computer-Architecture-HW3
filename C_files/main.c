@@ -66,7 +66,7 @@ int main(int argc, char *argv[]) {
         FILE *rand_out_stream = fopen("random_out.txt", "w");
         fprintf(rand_out_stream, "%lf\n", result);
         fclose(rand_out_stream);
-        printf("Also the result was added to \"random_out.txt\".");
+        printf("Also the result was added to \"random_out.txt\".\n");
     }
     return 0;
 }
