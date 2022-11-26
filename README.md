@@ -193,7 +193,7 @@ __Модифицированная программа:__
 >   [Ссылка на скриншоты (внизу)](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Tests.md) <br/>
 
 | Программа  | Время работы первого теста  | Время работы второго теста   | Размер исполняемого файла | Размер main.i файла | Размер lib.i файла | Суммарное количество строк | 
-| :---: | :---: | :---: | :---: | :---: |  :---: | 
+| :---: | :---: | :---: | :---: | :---: |  :---: |  :---: | 
 | [C](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Optimized_Files/C)  | 3066 ms  | 2220 ms | 17.1 KiB | 101.4 KiB | 60.01 KiB | 108 строк  | 
 | [Ассемблер](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Optimized_Files/Assembly)  | 3117 ms | 2138 ms | 17.0 KiB | 101.4 KiB | 60.01 KiB | 545 строк  | 
 | [Мод Ассемблер](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/With_flags/Assembly_mod)  | 3015 ms | 2138 ms | 16.9 KiB | - | - | 515 строк  | 
