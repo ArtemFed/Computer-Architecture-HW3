@@ -19,14 +19,14 @@
  > Си-код <br>
  > Ассемблер-код <br>
  > Модифицированный Ассемблер: <br/>
- > <img width="400" alt="Тест3" src="https://user-images.githubusercontent.com/57373162/204088263-6e100a3a-6a82-4950-b05a-32082c29465d.png">
+ > <img width="600" alt="Тест3" src="https://user-images.githubusercontent.com/57373162/204088263-6e100a3a-6a82-4950-b05a-32082c29465d.png">
 
 
 4. Тест 4 - epsilon: "1" - некорректный<br/>
  > Си-код <br>
  > Ассемблер-код <br>
  > Модифицированный Ассемблер: <br/>
- > <img width="400" alt="Тест4" src="https://user-images.githubusercontent.com/57373162/204088302-ff14f86b-60aa-4511-a17b-99ba28f072be.png">
+ > <img width="600" alt="Тест4" src="https://user-images.githubusercontent.com/57373162/204088302-ff14f86b-60aa-4511-a17b-99ba28f072be.png">
 
 
 
@@ -54,7 +54,7 @@
  > Си-код <br>
  > Ассемблер-код <br>
  > Модифицированный Ассемблер: <br/>
- > <img width="400" alt="Тест Файл 3" src="https://user-images.githubusercontent.com/57373162/204095209-a4925c06-f1f7-4899-b1ea-2b1969eba115.png">
+ > <img width="600" alt="Тест Файл 3" src="https://user-images.githubusercontent.com/57373162/204095209-a4925c06-f1f7-4899-b1ea-2b1969eba115.png">
 
 
 8. Тест работы со Случайным генератором:
