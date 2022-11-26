@@ -21,7 +21,7 @@ int main(int argc, char *argv[]) {
         printf("Epsilon: %*.*lf", 1, 8, epsilon);
 
         time_t t_start = clock();
-        for (int i = 0; i < 10000000; ++i) {
+        for (int i = 0; i < 25000000; ++i) {
             task(a, b, epsilon);
         }
         time_t t_end = clock();

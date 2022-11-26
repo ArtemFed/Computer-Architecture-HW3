@@ -93,7 +93,7 @@ main:
 # ./main.c:24:         for (int i = 0; i < 10000000; ++i) {
 	add	DWORD PTR -4[rbp], 1	# ++i
 .L3:
-	cmp	DWORD PTR -4[rbp], 9999999
+	cmp	DWORD PTR -4[rbp], 24999999
 	jle	.L4
 # ./main.c:27:         time_t t_end = clock();
 	call	clock@PLT

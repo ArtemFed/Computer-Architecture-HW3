@@ -91,7 +91,7 @@ main:
 # ./main.c:24:         for (int i = 0; i < 10000000; ++i) {
 	add	r12d, 1	# ++i
 .L3:
-	cmp	r12d, 9999999
+	cmp	r12d, 24999999
 	jle	.L4
 # ./main.c:27:         time_t t_end = clock();
 	call	clock@PLT
