@@ -102,7 +102,7 @@ check_accuracy:
 	push	rbp
 	mov	rbp, rsp
 	sub	rsp, 16
-	movsd	QWORD PTR -8[rbp], xmm0	# epsilon, epsilon
+	movsd	QWORD PTR -8[rbp], xmm0	# epsilon
 # ./lib.c:25:     fflush(stdin);
 	mov rdi, QWORD PTR stdin[rip]
 	call	fflush@PLT
@@ -110,15 +110,17 @@ check_accuracy:
 	movsd	xmm0, QWORD PTR .LC3[rip]
 	comisd	xmm0, QWORD PTR -8[rbp]
 	jbe	.L15
-# ./lib.c:27:         printf("Incorrect Epsilon: %lf. Expected value from %lf to %lf. It will be replaced by %*.*lf\n", epsilon, min_size, max_size, 1, 8, min_size);
+# ./lib.c:27:         printf("Incorrect Epsilon: %lf. Expected value from %*.*lf to %lf. It will be replaced by %*.*lf\n", epsilon, 1, 8, min_size, max_size, 1, 8, min_size);
 	movsd	xmm2, QWORD PTR .LC3[rip]
 	movsd	xmm1, QWORD PTR .LC4[rip]
 	movsd	xmm0, QWORD PTR .LC3[rip]
 	movapd	xmm3, xmm2
-	mov	edx, 8
-	mov	esi, 1
+	mov	r8d, 8
+	mov	ecx, 1
 	movapd	xmm2, xmm1
 	movapd	xmm1, xmm0
+	mov	edx, 8
+	mov	esi, 1
 	movq	xmm0, QWORD PTR -8[rbp]
 	lea	rdi, .LC5[rip]
 	mov	eax, 4
@@ -131,15 +133,17 @@ check_accuracy:
 	movsd	xmm0, QWORD PTR -8[rbp]
 	comisd	xmm0, QWORD PTR .LC4[rip]
 	jbe	.L16
-# ./lib.c:30:         printf("Incorrect Epsilon: %lf. Expected value from %lf to %lf. It will be replaced by %*.*lf\n", epsilon, min_size, max_size, 1, 3, max_size);
+# ./lib.c:30:         printf("Incorrect Epsilon: %lf. Expected value from %*.*lf to %lf. It will be replaced by %*.*lf\n", epsilon, 1, 8, min_size, max_size, 1, 3, max_size);
 	movsd	xmm2, QWORD PTR .LC4[rip]
 	movsd	xmm1, QWORD PTR .LC4[rip]
 	movsd	xmm0, QWORD PTR .LC3[rip]
 	movapd	xmm3, xmm2
-	mov	edx, 3
-	mov	esi, 1
+	mov	r8d, 3
+	mov	ecx, 1
 	movapd	xmm2, xmm1
 	movapd	xmm1, xmm0
+	mov	edx, 8
+	mov	esi, 1
 	movq	xmm0, QWORD PTR -8[rbp]
 	lea	rdi, .LC5[rip]
 	mov	eax, 4
