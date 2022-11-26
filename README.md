@@ -169,40 +169,40 @@ __Модифицированная программа:__
 
 # Отчёт 8 баллов:
 ### 1. _Решение на Cи c генератором случайного набора данных + интерфейс для расширения анализа командной строки + режим с таймером и циклом на 25млн итераций:_
-> * [main.c](https://github.com/ArtemFed/Computer-Architecture-HW2/blob/main/C%20Files/main.c) <br/>
-> * [lib.c](https://github.com/ArtemFed/Computer-Architecture-HW2/blob/main/C%20Files/lib.c) <br/>
+> * [main.c](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/C_files/main.c) <br/>
+> * [lib.c](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/C_files/lib.c) <br/>
 
 <br/>
 
 ### 2. _Модифицированное решение на ассемблере c генератором случайного набора данных + интерфейс для расширения анализа командной строки + режим с таймером и циклом на 25млн итераций:_
-> * [main_mod.s](https://github.com/ArtemFed/Computer-Architecture-HW2/blob/main/Assembler_mod/main_mod.s) <br/>
-> * [lib_mod.s](https://github.com/ArtemFed/Computer-Architecture-HW2/blob/main/Assembler_mod/lib_mod.s) <br/>
+> * [main_mod.s](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Assembler_mod/main_mod.s) <br/>
+> * [lib_mod.s](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Assembler_mod/lib_mod.s) <br/>
 
 <br/>
 
 ### 5. _Тестирование:_
-* [Ссылка](https://github.com/ArtemFed/Computer-Architecture-HW2/blob/main/Tests.md) <br/>
+* [Ссылка](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Tests.md) <br/>
   "Рандомайзер" работает корректно, создавая значение эпсилон (точности) из заданного диапазона от 0.00000001 до 0.001
 
 ---- 
 <br/>
 
 # Отчёт 9 баллов
-1) Первый тест: размер 30, 200млн итераций task(). <br/>
-2) Второй тест: размер 42, 200млн итераций task(). <br/>
->   [Ссылка на скриншоты](https://github.com/ArtemFed/Computer-Architecture-HW2/blob/main/Tests.md) <br/>
+1) Первый тест: eps=0.00000001, 25млн итераций task(). <br/>
+2) Второй тест: eps=0.0001, 25млн итераций task(). <br/>
+>   [Ссылка на скриншоты (внизу)](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Tests.md) <br/>
 
 | Программа  | Время работы первого теста  | Время работы второго теста   | Размер исполняемого файла | Суммарное количество строк | 
 | :---: | :---: | :---: | :---: | :---: | 
-| [C](https://github.com/ArtemFed/Computer-Architecture-HW2/blob/main/Optimized_Files/C)  | 14723 ms  | 17418 ms| 17.416 KiB  | 96 строк  | 
-| [Ассемблер](https://github.com/ArtemFed/Computer-Architecture-HW2/blob/main/Optimized_Files/Assembly)  | 14489 ms  | 14448 ms  | 17.36 KiB  | 433 строк  | 
-| [Мод Ассемблер](https://github.com/ArtemFed/Computer-Architecture-HW2/blob/main/Optimized_Files/Assembly_mod)  | 9502 ms  | 8106 ms  | 17.16 KiB  | 376 строк  | 
-| [Флаг -O0](https://github.com/ArtemFed/Computer-Architecture-HW2/tree/main/Optimized_Files/Compiled%20with%20-O0)  | 14538 ms  | 14748 ms  | 17.208 KiB  | 350 строк  | 
-| [Флаг -O1](https://github.com/ArtemFed/Computer-Architecture-HW2/tree/main/Optimized_Files/Compiled%20with%20-O1)  | 11087 ms  | 11107 ms  | 17.192 KiB  | 321 строк  | 
-| [Флаг -O2](https://github.com/ArtemFed/Computer-Architecture-HW2/tree/main/Optimized_Files/Compiled%20with%20-O2)  | 4901 ms  | 6157 ms  | 17.24 KiB  | 322 строк  | 
-| [Флаг -O3](https://github.com/ArtemFed/Computer-Architecture-HW2/tree/main/Optimized_Files/Compiled%20with%20-O3)  | 2615 ms  | 2840 ms  | 21.336 KiB  | 1211 строк  | 
-| [Флаг -Ofast](https://github.com/ArtemFed/Computer-Architecture-HW2/tree/main/Optimized_Files/Compiled%20with%20-Ofast)  | 2598 ms  | 2855 ms  | 21.336 KiB  | 1211 строк  | 
-| [Флаг -Os](https://github.com/ArtemFed/Computer-Architecture-HW2/tree/main/Optimized_Files/Compiled%20with%20-Os)  | 10691 ms  | 13065 ms  | 17.2 KiB  | 300 строк  | 
+| [C](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Optimized_Files/C)  | 3066 ms  | 2220 ms| 17.416 KiB  | 96 строк  | 
+| [Ассемблер](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Optimized_Files/Assembly)  | 3117 ms  | 2138 ms  | 17.36 KiB  | 433 строк  | 
+| [Мод Ассемблер](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/With_flags/Assembly_mod)  | 3015 ms  | 2138 ms  | 17.16 KiB  | 376 строк  | 
+| [Флаг -O0](https://github.com/ArtemFed/Computer-Architecture-HW3/tree/main/With_flags/Compiled%20with%20-O0)  | 3014 ms  | 2127 ms  | 17.208 KiB  | 350 строк  | 
+| [Флаг -O1](https://github.com/ArtemFed/Computer-Architecture-HW3/tree/main/With_flags/Compiled%20with%20-O1)  | 1747 ms  | 1191 ms  | 17.192 KiB  | 321 строк  | 
+| [Флаг -O2](https://github.com/ArtemFed/Computer-Architecture-HW3/tree/main/With_flags/Compiled%20with%20-O2)  | 1194 ms  | 811 ms  | 17.24 KiB  | 322 строк  | 
+| [Флаг -O3](https://github.com/ArtemFed/Computer-Architecture-HW3/tree/main/With_flags/Compiled%20with%20-O3)  | 1176 ms  | 788 ms  | 21.336 KiB  | 1211 строк  | 
+| [Флаг -Ofast](https://github.com/ArtemFed/Computer-Architecture-HW3/tree/main/With_flags/Compiled%20with%20-Ofast)  | 1129 ms  | 767 ms  | 21.336 KiB  | 1211 строк  | 
+| [Флаг -Os](https://github.com/ArtemFed/Computer-Architecture-HW3/tree/main/With_flags/Compiled%20with%20-Os)  | 1488 ms  | 944 ms  | 17.2 KiB  | 300 строк  | 
 
 ### Вывод по сравнению:
 * Размер файлов практически не отличается, так как код рантайма одинаковый, он присутствует в каждом варианте запуска и занимает большую часть памяти
