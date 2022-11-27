@@ -69,7 +69,8 @@
  > Ассемблер-код <br>
  > Модифицированный Ассемблер <br/>
  > Также различные флаги: <br/>
- > <img width="400" alt="Тест на 9 1" src="https://user-images.githubusercontent.com/57373162/204095268-97b0665b-49c2-4049-9019-cf89e3acd18f.png">
+ > <img width="400" alt="Тест на 9 3 new" src="https://user-images.githubusercontent.com/57373162/204138709-b1e93847-30ff-4a27-abb0-b57504d879cc.png">
+
 
 
 10. Тест работы модифицированной программы с выполнением функции task() 25млн раз на строке eps="0.001":
@@ -77,6 +78,7 @@
  > Ассемблер-код <br>
  > Модифицированный Ассемблер <br/>
  > Также различные флаги: <br/>
- > <img width="400" alt="Тест на 9 2" src="https://user-images.githubusercontent.com/57373162/204095299-95bde251-368e-4314-a28b-21d1c083fce4.png">
+ > <img width="400" alt="Тест на 9 4 new" src="https://user-images.githubusercontent.com/57373162/204138705-5dd56c8b-e108-4f53-a9fe-b5dd4423bbb6.png">
+
 
 
