@@ -147,8 +147,8 @@ __Модифицированная программа:__
 # Отчёт 7 баллов:
 ### 1. _Решение на Cи с двумя единицами компиляции + использование аргументов коммандной строки для работы с файлами:_ <br/>
 Две единиицы компиляции: main.c и lib.c:
-> * [main.c](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/C%20Files/main.c) <br/>
-> * [lib.c](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/C%20Files/lib.c) <br/>
+> * [main.c](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/C_files/main.c) <br/>
+> * [lib.c](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/C_files/lib.c) <br/>
 
 <br/>
 
@@ -195,15 +195,15 @@ __Модифицированная программа:__
 
 | Программа  | Время работы первого теста  | Время работы второго теста   | Размер исполняемого файла | Размер main.i файла | Размер lib.i файла | Суммарное количество строк | 
 | :---: | :---: | :---: | :---: | :---: |  :---: |  :---: | 
-| [C](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Optimized_Files/C)  | 3010 ms  | 2197 ms | 17.1 KiB | 101.4 KiB | 60.01 KiB | 108 строк  | 
-| [Ассемблер](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Optimized_Files/Assembly)  | 3064 ms | 2179 ms | 17.0 KiB | 101.4 KiB | 60.01 KiB | 545 строк  | 
-| [Мод Ассемблер](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/With_flags/Assembly_mod)  | 2749 ms | 1879 ms | 16.9 KiB | - | - | 487 строк  | 
-| [Флаг -O0](https://github.com/ArtemFed/Computer-Architecture-HW3/tree/main/With_flags/Compiled%20with%20-O0)  | 3102 ms | 2205 ms | 16.9 KiB |  101.4 KiB | 60.01 KiB | 480 строк  | 
-| [Флаг -O1](https://github.com/ArtemFed/Computer-Architecture-HW3/tree/main/With_flags/Compiled%20with%20-O1)  | 1890 ms | 1190 ms | 16.9 KiB | 128.3 KiB | 73.1 KiB | 409 строк  | 
-| [Флаг -O2](https://github.com/ArtemFed/Computer-Architecture-HW3/tree/main/With_flags/Compiled%20with%20-O2)  | 1164 ms | 801 ms | 16.9 KiB | 128.3 KiB | 73.1 KiB | 420 строк  | 
-| [Флаг -O3](https://github.com/ArtemFed/Computer-Architecture-HW3/tree/main/With_flags/Compiled%20with%20-O3)  | 1174 ms | 791 ms | 16.9 KiB | 128.3 KiB | 73.1 KiB | 420 строк  | 
-| [Флаг -Ofast](https://github.com/ArtemFed/Computer-Architecture-HW3/tree/main/With_flags/Compiled%20with%20-Ofast)  | 1136 ms | 774 ms  | 16.9 KiB | 128.7 KiB | 73.5 KiB | 4079 строк  | 
-| [Флаг -Os](https://github.com/ArtemFed/Computer-Architecture-HW3/tree/main/With_flags/Compiled%20with%20-Os)  | 1489 ms  | 948 ms  | 16.9 KiB | 123.9 KiB  | 70.3 KiB | 383 строк  | 
+| [C](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/C_files)  | 3010 ms  | 2197 ms | 17.1 KiB | 101.4 KiB | 60.01 KiB | 108 строк  | 
+| [Ассемблер](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Assembler)  | 3064 ms | 2179 ms | 17.0 KiB | 101.4 KiB | 60.01 KiB | 545 строк  | 
+| [Мод Ассемблер](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Assembler_mod)  | 2749 ms | 1879 ms | 16.9 KiB | - | - | 487 строк  | 
+| [Флаг -O0](https://github.com/ArtemFed/Computer-Architecture-HW3/tree/main/With_flags/Flag-O0)  | 3102 ms | 2205 ms | 16.9 KiB |  101.4 KiB | 60.01 KiB | 480 строк  | 
+| [Флаг -O1](https://github.com/ArtemFed/Computer-Architecture-HW3/tree/main/With_flags/Flag-O1)  | 1890 ms | 1190 ms | 16.9 KiB | 128.3 KiB | 73.1 KiB | 409 строк  | 
+| [Флаг -O2](https://github.com/ArtemFed/Computer-Architecture-HW3/tree/main/With_flags/Flag-O2)  | 1164 ms | 801 ms | 16.9 KiB | 128.3 KiB | 73.1 KiB | 420 строк  | 
+| [Флаг -O3](https://github.com/ArtemFed/Computer-Architecture-HW3/tree/main/With_flags/Flag-O3)  | 1174 ms | 791 ms | 16.9 KiB | 128.3 KiB | 73.1 KiB | 420 строк  | 
+| [Флаг -Ofast](https://github.com/ArtemFed/Computer-Architecture-HW3/tree/main/With_flags/Flag-Ofast)  | 1136 ms | 774 ms  | 16.9 KiB | 128.7 KiB | 73.5 KiB | 4079 строк  | 
+| [Флаг -Os](https://github.com/ArtemFed/Computer-Architecture-HW3/tree/main/With_flags/Flag-Os)  | 1489 ms  | 948 ms  | 16.9 KiB | 123.9 KiB  | 70.3 KiB | 383 строк  | 
 
 ### Вывод по сравнению:
 * Размер исполняемый файлов практически не отличается, так как код рантайма одинаковый, он присутствует в каждом варианте запуска и занимает большую часть памяти
