@@ -63,10 +63,8 @@ main:
 # ./main.c:20:         epsilon = check_accuracy(epsilon);
 	movq	xmm0, QWORD PTR -64[rbp]  # epsilon => check_accuracy(epsilon);
 	call	check_accuracy@PLT
-	movq	rax, xmm0
-	mov	QWORD PTR -64[rbp], rax	# epsilon 
+	movq	QWORD PTR -64[rbp], xmm0	# epsilon 
 # ./main.c:21:         printf("Epsilon: %*.*lf", 1, 8, epsilon);
-	movq	xmm0, QWORD PTR -64[rbp]		# epsilon => printf("Epsilon: %*.*lf", 1, 8, epsilon);
 	mov	edx, 8		#  => printf("Epsilon: %*.*lf", 1, 8, epsilon);
 	mov	esi, 1		# 1 => printf("Epsilon: %*.*lf", 1, 8, epsilon);
 	lea	rdi, .LC2[rip]	# "Epsilon: %*.*lf" => printf("Epsilon: %*.*lf", 1, 8, epsilon);
@@ -80,12 +78,9 @@ main:
 	jmp	.L3
 .L4:
 # ./main.c:25:             task(a, b, epsilon);
-	movsd	xmm1, QWORD PTR -64[rbp]
-	movsd	xmm0, QWORD PTR .LC3[rip]
-	mov	rax, QWORD PTR .LC4[rip]
-	movapd	xmm2, xmm1		# epsilon => task(a, b, epsilon);
-	movapd	xmm1, xmm0		# b => task(a, b, epsilon);
-	movq	xmm0, rax		# a => task(a, b, epsilon);
+	movq	xmm2, QWORD PTR -64[rbp]		# epsilon => task(a, b, epsilon);
+	movq	xmm1, QWORD PTR .LC3[rip]		# b => task(a, b, epsilon);
+	movq	xmm0, QWORD PTR .LC4[rip]		# a => task(a, b, epsilon);
 	call	task@PLT
 # ./main.c:24:         for (int i = 0; i < 10000000; ++i) {
 	add	r12d, 1	# ++i
@@ -111,12 +106,9 @@ main:
 	mov	eax, 0
 	call	printf@PLT
 # ./main.c:30:         printf("\nResult: x =  %*.*lf\n", 1, 8, task(a, b, epsilon));
-	movsd	xmm1, QWORD PTR -64[rbp]
-	movsd	xmm0, QWORD PTR .LC3[rip]
-	mov	rax, QWORD PTR .LC4[rip]
-	movapd	xmm2, xmm1		# epsilon => task(a, b, epsilon);
-	movapd	xmm1, xmm0		# b => task(a, b, epsilon);
-	movq	xmm0, rax		# a => task(a, b, epsilon);
+	movq	xmm2, QWORD PTR -64[rbp]		# epsilon => task(a, b, epsilon);
+	movq	xmm1, QWORD PTR .LC3[rip]		# b => task(a, b, epsilon);
+	movq	xmm0, QWORD PTR .LC4[rip]		# a => task(a, b, epsilon);
 	call	task@PLT
 	mov	edx, 8
 	mov	esi, 1
@@ -157,8 +149,7 @@ main:
 	mov rdi, QWORD PTR -32[rbp]	# input_stream => fclose(input_stream);
 	call	fclose@PLT
 # ./main.c:43:         epsilon = check_accuracy(epsilon);
-	mov	rax, QWORD PTR -64[rbp]
-	movq	xmm0, rax	  # epsilon => check_accuracy(epsilon);
+	movq	xmm0, QWORD PTR -64[rbp]	  # epsilon => check_accuracy(epsilon);
 	call	check_accuracy@PLT
 	movq	rax, xmm0
 	mov	QWORD PTR -64[rbp], rax	# epsilon init
@@ -170,12 +161,9 @@ main:
 	call	fopen@PLT
 	mov	QWORD PTR -40[rbp], rax	# output_stream init
 # ./main.c:46:         fprintf(output_stream, "%*.*lf\n", 1, 8, task(a, b, epsilon));
-	movsd	xmm1, QWORD PTR -64[rbp]
-	movsd	xmm0, QWORD PTR .LC3[rip]
-	mov	rax, QWORD PTR .LC4[rip]
-	movapd	xmm2, xmm1		# epsilon => task(a, b, epsilon);
-	movapd	xmm1, xmm0		# b => task(a, b, epsilon);
-	movq	xmm0, rax		# a => task(a, b, epsilon);
+	movsd xmm2, QWORD PTR -64[rbp]		# epsilon => task(a, b, epsilon);
+	movsd xmm1, QWORD PTR .LC3[rip]		# b => task(a, b, epsilon);
+	movsd	xmm0, QWORD PTR .LC4[rip]		# a => task(a, b, epsilon);
 	call	task@PLT
 	mov	ecx, 8
 	mov	edx, 1
@@ -244,15 +232,11 @@ main:
 # ./main.c:62:     epsilon = check_accuracy(epsilon);
 	movq	xmm0, QWORD PTR -64[rbp]	  # epsilon => check_accuracy(epsilon);
 	call	check_accuracy@PLT
-	movq	rax, xmm0
-	mov	QWORD PTR -64[rbp], rax	# epsilon re init
+	movq QWORD PTR -64[rbp], xmm0	# epsilon re init
 # ./main.c:63:     double result = task(a, b, epsilon);
-	movsd	xmm1, QWORD PTR -64[rbp]
-	movsd	xmm0, QWORD PTR .LC3[rip]
-	mov	rax, QWORD PTR .LC4[rip]
-	movapd	xmm2, xmm1		# epsilon => task(a, b, epsilon);
-	movapd	xmm1, xmm0		# b => task(a, b, epsilon);
-	movq	xmm0, rax		# a => task(a, b, epsilon);
+	movsd xmm2, QWORD PTR -64[rbp]		# epsilon => task(a, b, epsilon);
+	movsd xmm1, QWORD PTR .LC3[rip]		# b => task(a, b, epsilon);
+	movsd	xmm0, QWORD PTR .LC4[rip]		# a => task(a, b, epsilon);
 	call	task@PLT
 	movq	rax, xmm0
 	mov	QWORD PTR -16[rbp], rax	# result init
