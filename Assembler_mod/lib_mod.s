@@ -12,15 +12,10 @@ func:
 	movsd	xmm0, QWORD PTR -8[rbp]
 	mulsd	xmm0, xmm0
 	mulsd	xmm0, QWORD PTR -8[rbp]
-	movapd	xmm1, xmm0
-	mulsd	xmm1, QWORD PTR -8[rbp]
-	movsd	xmm0, QWORD PTR -8[rbp]
-	mulsd	xmm0, xmm0
-	mulsd	xmm0, QWORD PTR -8[rbp]
-	subsd	xmm1, xmm0
-	movapd	xmm0, xmm1
-	movsd	xmm1, QWORD PTR .LC0[rip]
-	subsd	xmm0, xmm1
+	movapd	xmm1, xmm0		# x^3
+	mulsd	xmm0, QWORD PTR -8[rbp]		# x^4
+	subsd	xmm0, xmm1		# x^4 - x^3
+	subsd	xmm0, QWORD PTR .LC0[rip]		# res - 2.5
 # ./lib.c:9: }
 	pop	rbp
 	ret	
@@ -36,11 +31,9 @@ task:
 	movsd	QWORD PTR -32[rbp], xmm1	# x2, x2
 	movsd	QWORD PTR -40[rbp], xmm2	# epsilon, epsilon
 # ./lib.c:13:     double fb = func(x2), mid = 0;
-	mov	rax, QWORD PTR -32[rbp]
-	movq	xmm0, rax		# x2 => func(x2);
+	movq	xmm0, QWORD PTR -32[rbp]		# x2 => func(x2);
 	call	func
-	movq	rax, xmm0
-	mov	QWORD PTR -8[rbp], rax	# fb init
+	movsd	QWORD PTR -8[rbp], xmm0	# fb init
 	pxor	xmm0, xmm0
 	movsd	QWORD PTR -16[rbp], xmm0	# mid init
 # ./lib.c:14:     while (fabs(func(x2)) > epsilon)
@@ -51,8 +44,7 @@ task:
 	subsd	xmm0, QWORD PTR -24[rbp]
 	mulsd	xmm0, QWORD PTR -8[rbp]
 	movsd	QWORD PTR -48[rbp], xmm0 # %sfp init
-	mov	rax, QWORD PTR -24[rbp]
-	movq	xmm0, rax		# x1 => func(x1);
+	movsd	xmm0, QWORD PTR -24[rbp]		# x1 => func(x1);
 	call	func
 	movsd	xmm1, QWORD PTR -8[rbp]
 	movapd	xmm3, xmm1
@@ -70,8 +62,7 @@ task:
 	movsd	xmm0, QWORD PTR -16[rbp]
 	movsd	QWORD PTR -32[rbp], xmm0	# x2
 # ./lib.c:19:         fb = func(x2);
-	mov	rax, QWORD PTR -32[rbp]
-	movq	xmm0, rax		# x2 => func(x2);
+	movq	xmm0, QWORD PTR -32[rbp]		# x2 => func(x2);
 	call	func
 	movq	rax, xmm0
 	mov	QWORD PTR -8[rbp], rax
