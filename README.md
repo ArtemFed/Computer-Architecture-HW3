@@ -194,20 +194,20 @@ __Модифицированная программа:__
 
 | Программа  | Время работы первого теста  | Время работы второго теста   | Размер исполняемого файла | Размер main.i файла | Размер lib.i файла | Суммарное количество строк | 
 | :---: | :---: | :---: | :---: | :---: |  :---: |  :---: | 
-| [C](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Optimized_Files/C)  | 3066 ms  | 2220 ms | 17.1 KiB | 101.4 KiB | 60.01 KiB | 108 строк  | 
-| [Ассемблер](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Optimized_Files/Assembly)  | 3117 ms | 2138 ms | 17.0 KiB | 101.4 KiB | 60.01 KiB | 545 строк  | 
-| [Мод Ассемблер](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/With_flags/Assembly_mod)  | 3015 ms | 2137 ms | 16.9 KiB | - | - | 515 строк  | 
-| [Флаг -O0](https://github.com/ArtemFed/Computer-Architecture-HW3/tree/main/With_flags/Compiled%20with%20-O0)  | 3014 ms | 2127 ms | 16.9 KiB |  101.4 KiB | 60.01 KiB | 480 строк  | 
-| [Флаг -O1](https://github.com/ArtemFed/Computer-Architecture-HW3/tree/main/With_flags/Compiled%20with%20-O1)  | 1747 ms | 1191 ms | 16.9 KiB | 128.3 KiB | 73.1 KiB | 409 строк  | 
-| [Флаг -O2](https://github.com/ArtemFed/Computer-Architecture-HW3/tree/main/With_flags/Compiled%20with%20-O2)  | 1194 ms | 811 ms | 16.9 KiB | 128.3 KiB | 73.1 KiB | 420 строк  | 
-| [Флаг -O3](https://github.com/ArtemFed/Computer-Architecture-HW3/tree/main/With_flags/Compiled%20with%20-O3)  | 1176 ms | 788 ms | 16.9 KiB | 128.3 KiB | 73.1 KiB | 420 строк  | 
-| [Флаг -Ofast](https://github.com/ArtemFed/Computer-Architecture-HW3/tree/main/With_flags/Compiled%20with%20-Ofast)  | 1129 ms | 767 ms  | 16.9 KiB | 128.7 KiB | 73.5 KiB | 4079 строк  | 
-| [Флаг -Os](https://github.com/ArtemFed/Computer-Architecture-HW3/tree/main/With_flags/Compiled%20with%20-Os)  | 1488 ms  | 944 ms  | 16.9 KiB | 123.9 KiB  | 70.3 KiB | 383 строк  | 
+| [C](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Optimized_Files/C)  | 3010 ms  | 2197 ms | 17.1 KiB | 101.4 KiB | 60.01 KiB | 108 строк  | 
+| [Ассемблер](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Optimized_Files/Assembly)  | 3064 ms | 2179 ms | 17.0 KiB | 101.4 KiB | 60.01 KiB | 545 строк  | 
+| [Мод Ассемблер](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/With_flags/Assembly_mod)  | 2749 ms | 1879 ms | 16.9 KiB | - | - | 487 строк  | 
+| [Флаг -O0](https://github.com/ArtemFed/Computer-Architecture-HW3/tree/main/With_flags/Compiled%20with%20-O0)  | 3102 ms | 2205 ms | 16.9 KiB |  101.4 KiB | 60.01 KiB | 480 строк  | 
+| [Флаг -O1](https://github.com/ArtemFed/Computer-Architecture-HW3/tree/main/With_flags/Compiled%20with%20-O1)  | 1890 ms | 1190 ms | 16.9 KiB | 128.3 KiB | 73.1 KiB | 409 строк  | 
+| [Флаг -O2](https://github.com/ArtemFed/Computer-Architecture-HW3/tree/main/With_flags/Compiled%20with%20-O2)  | 1164 ms | 801 ms | 16.9 KiB | 128.3 KiB | 73.1 KiB | 420 строк  | 
+| [Флаг -O3](https://github.com/ArtemFed/Computer-Architecture-HW3/tree/main/With_flags/Compiled%20with%20-O3)  | 1174 ms | 791 ms | 16.9 KiB | 128.3 KiB | 73.1 KiB | 420 строк  | 
+| [Флаг -Ofast](https://github.com/ArtemFed/Computer-Architecture-HW3/tree/main/With_flags/Compiled%20with%20-Ofast)  | 1136 ms | 774 ms  | 16.9 KiB | 128.7 KiB | 73.5 KiB | 4079 строк  | 
+| [Флаг -Os](https://github.com/ArtemFed/Computer-Architecture-HW3/tree/main/With_flags/Compiled%20with%20-Os)  | 1489 ms  | 948 ms  | 16.9 KiB | 123.9 KiB  | 70.3 KiB | 383 строк  | 
 
 ### Вывод по сравнению:
 * Размер исполняемый файлов практически не отличается, так как код рантайма одинаковый, он присутствует в каждом варианте запуска и занимает большую часть памяти
 * INTERCAL Файлы (.i) увеличивают свой размер пропорционально скорости выполнения, так самая быстрая программа Ofast.i суммарно весит на 25% процентов больше исходных Си файлов.i
-* Си, обычный ассемблер, флаг -О0 и модифицированный ассемблер отработали идентично, так как задействовали минимальное количество регистров процессора
-* Разница в скорости работы между -O0, -O1, -O2 и -Ofast очень сильно заметна
+* Си, обычный ассемблер, флаг -О0 и модифицированный ассемблер отработали практически идентично, так как задействовали минимальное количество регистров процессора
+* Разница в скорости работы между -O0, mod.s, -O1, -O2 и -Ofast очень сильно заметна
 * Разница в скорости работы между -03 и -Ofast минимальна
 * -Ofast исползовал почти в 10 раз больше строк кода, чем любой другой флаг компиляции
