@@ -67,6 +67,26 @@
 *		- mov	rax, QWORD PTR -24[rbp]
 		- mov	rdi, rax
 		Так 2 раза
+*		- movq	rax, xmm0
+		- mov	QWORD PTR -64[rbp], rax
+		- movq	xmm0, QWORD PTR -64[rbp]
+		+ movq	QWORD PTR -64[rbp], xmm0
+*		- mov	rax, QWORD PTR -64[rbp]
+		- movq	xmm0, rax
+		+ movq	xmm0, QWORD PTR -64[rbp]
+*		- movsd	xmm1, QWORD PTR -64[rbp]
+		- movsd	xmm0, QWORD PTR .LC3[rip]
+		- mov	rax, QWORD PTR .LC4[rip]
+		- movapd xmm2, xmm1
+		- movapd xmm1, xmm0
+		- movq	xmm0, rax
+		+ movsd xmm2, QWORD PTR -64[rbp]
+		+ movsd xmm1, QWORD PTR .LC3[rip]
+		+ movsd	xmm0, QWORD PTR .LC4[rip]
+		Так 2 раза
+*		- movq	rax, xmm0
+		- mov	QWORD PTR -64[rbp], rax
+		+ movq QWORD PTR -64[rbp], xmm0
 ##    Регистры:
 * r12d => -4[rbp] = i в for
 
@@ -91,12 +111,38 @@
 
 # __lib_mod.s__
 ##    Бесполезные переприсваивания:
-
+### double func(double x)
+*		- ./lib.c:8:     return x * x * x * x - x * x * x - 2.5;
+		movsd	xmm0, QWORD PTR -8[rbp]
+		mulsd	xmm0, xmm0
+		mulsd	xmm0, QWORD PTR -8[rbp]
+		movapd	xmm1, xmm0
+		- mulsd	xmm1, QWORD PTR -8[rbp]
+		- movsd	xmm0, QWORD PTR -8[rbp]
+		- mulsd	xmm0, xmm0
+		mulsd	xmm0, QWORD PTR -8[rbp]
+		- subsd	xmm1, xmm0
+		+ subsd	xmm0, xmm1
+		- movapd	xmm0, xmm1
+		- movsd	xmm1, QWORD PTR .LC0[rip]
+		- subsd	xmm0, xmm1
+		+ subsd	xmm0, QWORD PTR .LC0[rip]
+	
+### double task(double x1, double x2, double epsilon)
+*		- mov	rax, QWORD PTR -32[rbp]
+		- movq	xmm0, rax
+		+ movq	xmm0, QWORD PTR -32[rbp]
+		Так 2 раза
+*		- movq	rax, xmm0
+		- mov	QWORD PTR -8[rbp], rax
+		+ movsd	QWORD PTR -8[rbp], xmm0
+*		(Ещё несколько не задокументированных изменений)
+	
 ### double check_accuracy(double epsilon)
-* 	- mov	rax, QWORD PTR -8[rbp]
-	- movq	xmm0, rax
-	+ movq	xmm0, QWORD PTR -8[rbp]
-	Так 2 раза
+* 		- mov	rax, QWORD PTR -8[rbp]
+		- movq	xmm0, rax
+		+ movq	xmm0, QWORD PTR -8[rbp]
+		Так 2 раза
 
 ##    Просто удалено
 *     .section	.note.gnu.property,"a"
