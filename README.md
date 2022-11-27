@@ -14,9 +14,9 @@
 
 * [Assembler_mod](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Assembler_mod) - содержит модифицированный код на Ассемблере c комментариями к коду
 
-__Заметка 1:__ В папке [_Assembler_](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Assembler) содержится файл [_README.md_](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Assembler/README.md) со списком переменных и их адресами в памяти (эквиваленты Си и Ассемблера)
+__Заметка 1:__ В папке [_Assembler_](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Assembler) содержится файл [_Readme.md_](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Assembler/Readme.md) со списком переменных и их адресами в памяти (эквиваленты Си и Ассемблера)
 
-__Заметка 2:__ В папке [_Assembler_mod_](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Assembler_mod) содержится файл [_README.md_](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Assembler_mod/README.md) со списком изменений (модификаций) после преобразования из первичного Ассемблера в модифицированный.
+__Заметка 2:__ В папке [_Assembler_mod_](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Assembler_mod) содержится файл [_Readme.md_](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Assembler_mod/Readme.md) со списком изменений (модификаций) после преобразования из первичного Ассемблера в модифицированный.
 
 ***Примечание:*** Программа разрабатывалась сразу на 9 баллов, поэтому ссылка в каждом разделе будет на одинаковые файлы 
 
@@ -74,13 +74,13 @@ __Программа проассемблирована и откомпилир�
 > * [lib.s](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Assembler/lib.s)
 
 __Добавлены комментарии и удобный список, поясняющий эквивалентное представление переменных на С в Ассемблере.__
-> [Список переменных](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Assembler/README.md)
+> [Список переменных](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Assembler/Readme.md)
 
 <br/>
 
 ### 3. _Модифицированная ассемблерная программа с комментариями:_
 __Программа промодифицирована вручную:__
-> [Список изменений](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Assembler_mod/README.md)
+> [Список изменений](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Assembler_mod/Readme.md)
 
 __Модифицированная программа:__
 > * [main_mod.s](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Assembler_mod/main_mod.s)
@@ -113,11 +113,11 @@ __Модифицированная программа:__
 > 3)  rsi/esi - второй int аргумент в функции
 > 4)  rdx - третий int аргумент в функции
 > 5)  rcx - int счётчик
-> 6)  xmm0, xmm1, xm2 для передачи double аргументов в функции по порядку
+> 6)  xmm0, xmm1, xmm2, xmm3 для передачи double аргументов в функции по порядку
 
-> * [Список переменных в модифицированной программе](https://github.com/ArtemFed/Computer-Architecture-HW2/blob/main/Assembler_mod/Readme.md)
-> * [main_mod.s](https://github.com/ArtemFed/Computer-Architecture-HW2/blob/main/Assembler_mod/main_mod.s)
-> * [lib_mod.s](https://github.com/ArtemFed/Computer-Architecture-HW2/blob/main/Assembler_mod/lib_mod.s)
+> * [Список модифицикаций в программе](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Assembler_mod/Readme.md)
+> * [main_mod.s](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Assembler_mod/main_mod.s)
+> * [lib_mod.s](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Assembler_mod/lib_mod.s)
 
 
 ---- 
@@ -129,7 +129,7 @@ __Модифицированная программа:__
 Были реализованы все увиденные возможные замены локальных переменных на регистры процессора:
 *   Добавлен r12d вместо перемеенной-итератора i в for в main()
 *   Остальные замены (epsilon, answer) привели к Segmentation fault (core dumped), поэтому было решено оставить как есть :)
-
+*   Замены double переменных на xmm7 или xmm8 не оправдали затрат времени, программа стала работать незначительно дольше
 
 > * [main_mod.s](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Assembler_mod/main_mod.s) <br/>
 > * [lib_mod.s](https://github.com/ArtemFed/Computer-Architecture-HW3/blob/main/Assembler_mod/lib_mod.s) <br/>
